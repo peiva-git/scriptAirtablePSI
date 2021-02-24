@@ -24,6 +24,17 @@ let settings = input.config( {
 })
 */
 
+let settings = input.config( {
+    title: "Insert partners and cities from input table",
+    description: "For each partner in INPUT, find corresponding city and nation, update Partner table and add necessary links",
+    items: [
+        input.config.table("inputTable", { label: "Tabella Input"}),
+        input.config.table("citiesTable", { label: "Tabella Città"}),
+        input.config.table("nationsTable", { label: "Tabella Nazioni"}),
+        input.config.table("partnersTable", { label: "Tabella Partner"})
+    ]
+});
+
 const addPartnersGivenCity = async function(inputRecord) {
 
     // add partner
